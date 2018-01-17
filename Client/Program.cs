@@ -19,7 +19,7 @@ namespace Client
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Application.Run(new Client());
             /*
             UDPServer server = new UDPServer("127.0.1.1", 2048);
             UDPClient client = new UDPClient("127.0.1.1", 2048);

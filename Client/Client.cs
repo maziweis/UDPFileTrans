@@ -13,11 +13,11 @@ using System.IO;
 
 namespace Client
 {
-    public partial class Form1 : Form
+    public partial class Client : Form
     {
         /*客户端*/
         SynchronizationContext m_SyncContext = null;
-        public Form1()
+        public Client()
         {
             InitializeComponent();
 

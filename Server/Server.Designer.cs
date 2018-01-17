@@ -1,6 +1,6 @@
 ﻿namespace Server
 {
-    partial class Form1
+    partial class Server
     {
         /// <summary>
         /// 必需的设计器变量。
@@ -53,27 +53,27 @@
             this.gbServer.Controls.Add(this.mtbIP);
             this.gbServer.Controls.Add(this.lblPort);
             this.gbServer.Controls.Add(this.lblIP);
-            this.gbServer.Location = new System.Drawing.Point(12, 12);
+            this.gbServer.Location = new System.Drawing.Point(12, 11);
             this.gbServer.Name = "gbServer";
-            this.gbServer.Size = new System.Drawing.Size(382, 112);
+            this.gbServer.Size = new System.Drawing.Size(382, 103);
             this.gbServer.TabIndex = 7;
             this.gbServer.TabStop = false;
             this.gbServer.Text = "启动服务器";
             // 
             // tbPort
             // 
-            this.tbPort.Location = new System.Drawing.Point(74, 59);
+            this.tbPort.Location = new System.Drawing.Point(74, 54);
             this.tbPort.Mask = "99999";
             this.tbPort.Name = "tbPort";
             this.tbPort.PromptChar = ' ';
-            this.tbPort.Size = new System.Drawing.Size(100, 20);
+            this.tbPort.Size = new System.Drawing.Size(100, 21);
             this.tbPort.TabIndex = 6;
             // 
             // btnStartServer
             // 
-            this.btnStartServer.Location = new System.Drawing.Point(284, 21);
+            this.btnStartServer.Location = new System.Drawing.Point(284, 19);
             this.btnStartServer.Name = "btnStartServer";
-            this.btnStartServer.Size = new System.Drawing.Size(75, 23);
+            this.btnStartServer.Size = new System.Drawing.Size(75, 21);
             this.btnStartServer.TabIndex = 4;
             this.btnStartServer.Text = "启动";
             this.btnStartServer.UseVisualStyleBackColor = true;
@@ -81,27 +81,27 @@
             // 
             // mtbIP
             // 
-            this.mtbIP.Location = new System.Drawing.Point(74, 27);
+            this.mtbIP.Location = new System.Drawing.Point(74, 25);
             this.mtbIP.Mask = "999.999.999.999";
             this.mtbIP.Name = "mtbIP";
-            this.mtbIP.Size = new System.Drawing.Size(172, 20);
+            this.mtbIP.Size = new System.Drawing.Size(172, 21);
             this.mtbIP.TabIndex = 3;
             // 
             // lblPort
             // 
             this.lblPort.AutoSize = true;
-            this.lblPort.Location = new System.Drawing.Point(25, 56);
+            this.lblPort.Location = new System.Drawing.Point(25, 52);
             this.lblPort.Name = "lblPort";
-            this.lblPort.Size = new System.Drawing.Size(43, 13);
+            this.lblPort.Size = new System.Drawing.Size(41, 12);
             this.lblPort.TabIndex = 1;
             this.lblPort.Text = "端口：";
             // 
             // lblIP
             // 
             this.lblIP.AutoSize = true;
-            this.lblIP.Location = new System.Drawing.Point(3, 26);
+            this.lblIP.Location = new System.Drawing.Point(3, 24);
             this.lblIP.Name = "lblIP";
-            this.lblIP.Size = new System.Drawing.Size(65, 13);
+            this.lblIP.Size = new System.Drawing.Size(65, 12);
             this.lblIP.TabIndex = 0;
             this.lblIP.Text = "服务器IP：";
             // 
@@ -110,27 +110,27 @@
             this.gbMsg.Controls.Add(this.tbMsgHistory);
             this.gbMsg.Controls.Add(this.btnSendMsg);
             this.gbMsg.Controls.Add(this.tbMsg);
-            this.gbMsg.Location = new System.Drawing.Point(13, 131);
+            this.gbMsg.Location = new System.Drawing.Point(12, 132);
             this.gbMsg.Name = "gbMsg";
-            this.gbMsg.Size = new System.Drawing.Size(381, 173);
+            this.gbMsg.Size = new System.Drawing.Size(381, 402);
             this.gbMsg.TabIndex = 8;
             this.gbMsg.TabStop = false;
             this.gbMsg.Text = "发送消息";
             // 
             // tbMsgHistory
             // 
-            this.tbMsgHistory.Location = new System.Drawing.Point(7, 20);
+            this.tbMsgHistory.Location = new System.Drawing.Point(7, 18);
             this.tbMsgHistory.Multiline = true;
             this.tbMsgHistory.Name = "tbMsgHistory";
             this.tbMsgHistory.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.tbMsgHistory.Size = new System.Drawing.Size(351, 118);
+            this.tbMsgHistory.Size = new System.Drawing.Size(351, 353);
             this.tbMsgHistory.TabIndex = 2;
             // 
             // btnSendMsg
             // 
-            this.btnSendMsg.Location = new System.Drawing.Point(283, 143);
+            this.btnSendMsg.Location = new System.Drawing.Point(284, 375);
             this.btnSendMsg.Name = "btnSendMsg";
-            this.btnSendMsg.Size = new System.Drawing.Size(75, 23);
+            this.btnSendMsg.Size = new System.Drawing.Size(75, 21);
             this.btnSendMsg.TabIndex = 1;
             this.btnSendMsg.Text = "发送";
             this.btnSendMsg.UseVisualStyleBackColor = true;
@@ -138,28 +138,28 @@
             // 
             // tbMsg
             // 
-            this.tbMsg.Location = new System.Drawing.Point(7, 144);
+            this.tbMsg.Location = new System.Drawing.Point(7, 377);
             this.tbMsg.Multiline = true;
             this.tbMsg.Name = "tbMsg";
-            this.tbMsg.Size = new System.Drawing.Size(269, 20);
+            this.tbMsg.Size = new System.Drawing.Size(269, 19);
             this.tbMsg.TabIndex = 0;
             // 
             // gbFileTrans
             // 
             this.gbFileTrans.Controls.Add(this.btnExit);
             this.gbFileTrans.Controls.Add(this.btnStopTrans);
-            this.gbFileTrans.Location = new System.Drawing.Point(13, 311);
+            this.gbFileTrans.Location = new System.Drawing.Point(12, 540);
             this.gbFileTrans.Name = "gbFileTrans";
-            this.gbFileTrans.Size = new System.Drawing.Size(381, 56);
+            this.gbFileTrans.Size = new System.Drawing.Size(381, 52);
             this.gbFileTrans.TabIndex = 9;
             this.gbFileTrans.TabStop = false;
             this.gbFileTrans.Text = "文件传输";
             // 
             // btnExit
             // 
-            this.btnExit.Location = new System.Drawing.Point(254, 20);
+            this.btnExit.Location = new System.Drawing.Point(254, 18);
             this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(75, 23);
+            this.btnExit.Size = new System.Drawing.Size(75, 21);
             this.btnExit.TabIndex = 1;
             this.btnExit.Text = "退出";
             this.btnExit.UseVisualStyleBackColor = true;
@@ -167,9 +167,9 @@
             // 
             // btnStopTrans
             // 
-            this.btnStopTrans.Location = new System.Drawing.Point(48, 20);
+            this.btnStopTrans.Location = new System.Drawing.Point(48, 18);
             this.btnStopTrans.Name = "btnStopTrans";
-            this.btnStopTrans.Size = new System.Drawing.Size(75, 23);
+            this.btnStopTrans.Size = new System.Drawing.Size(75, 21);
             this.btnStopTrans.TabIndex = 0;
             this.btnStopTrans.Text = "停止传输";
             this.btnStopTrans.UseVisualStyleBackColor = true;
@@ -177,12 +177,12 @@
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.AutoSize = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(405, 375);
+            this.ClientSize = new System.Drawing.Size(396, 621);
             this.Controls.Add(this.gbServer);
             this.Controls.Add(this.gbMsg);
             this.Controls.Add(this.gbFileTrans);

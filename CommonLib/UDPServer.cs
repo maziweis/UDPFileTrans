@@ -17,11 +17,11 @@ namespace CommonLib
 
         public String fileName { get; set; }
         public String filePath { get; set; }
-        public  long fileSize { get; set; }
+        public long fileSize { get; set; }
 
         /*本来是用于停止传输的，现在用来用于超时停止UDP传输*/
         private volatile Boolean canRev = true;
-        public  String IP { get; }
+        public String IP { get; }
         private int port;
         public UDPServer(String ipadd, int port)
         {
@@ -46,30 +46,37 @@ namespace CommonLib
         }
         public void reciveFile()
         {
-            FileStream fs = new FileStream(filePath + fileName, FileMode.Append, FileAccess.Write);
-            
-            CancellationTokenSource ct = new CancellationTokenSource();
-            ct.Token.Register(() => {
-                canRev = false;
-            });
-            ct.CancelAfter((int)fileSize / 300>1000? (int)fileSize / 300:1000);
-            
-            long length = 0;
-            while (length < fileSize)
+            try
             {
-                if (canRev)
+                FileStream fs = new FileStream(filePath + fileName, FileMode.Append, FileAccess.Write);
+                CancellationTokenSource ct = new CancellationTokenSource();
+                ct.Token.Register(() =>
                 {
-                    int rev= reciveData(fs);
-                    if (rev == -1) break;//还没设过-1
-                    else length += rev;
-                    //fs.Seek(length, SeekOrigin.Begin);
+                    canRev = false;
+                });
+                ct.CancelAfter((int)fileSize / 200 > 1000 ? (int)fileSize / 200 : 1000);
+
+                long length = 0;
+                while (length < fileSize)
+                {
+                    if (canRev)
+                    {
+                        int rev = ReciveData(fs);
+                        if (rev == 0) break;//还没设过-1
+                        else length += rev;
+                        //fs.Seek(length, SeekOrigin.Begin);
+                    }
+                    else break;
+
                 }
-                else break;
+                ct.Dispose();
+                fs.Flush();
+                fs.Close();
+            }
+            catch (Exception ex)
+            {
 
             }
-            ct.Dispose();
-            fs.Flush();
-            fs.Close();
             //Thread.CurrentThread.Abort();
             //reciveData(fs);
             /*
@@ -81,10 +88,10 @@ namespace CommonLib
         {
             canRev = false;
         }
-        private int reciveData(FileStream fs)
+        private int ReciveData(FileStream fs)
         {
             EndPoint temp = new IPEndPoint(IPAddress.Any, 0);
-            byte[] byteArray = new byte[1024];
+            byte[] byteArray = new byte[1024*1024*2];
             if (hostData.Available != 0)
             {
                 int rev = hostData.ReceiveFrom(byteArray, ref temp);

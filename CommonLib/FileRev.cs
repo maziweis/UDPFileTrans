@@ -15,7 +15,7 @@ namespace CommonLib
         public FileRev()
         {
         }
-        public void reciveFile(UDPServer server, String fileName,long fileSize)
+        public void ReciveFile(UDPServer server, String fileName,long fileSize)
         {
             //FileStream fs = new FileStream(filePath + fileName, FileMode.Create, FileAccess.Write);
             /*
@@ -40,7 +40,7 @@ namespace CommonLib
             Thread t = Util.newThread(st);
             //server.closeSocket();
         }
-        public void stopSend()
+        public void StopSend()
         {
             server.stopRev();
             File.Delete(filePath + server.fileName);

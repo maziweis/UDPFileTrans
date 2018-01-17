@@ -57,7 +57,7 @@ namespace CommonLib
         public void initSocket(int port)
         {
             hostData = new Socket(AddressFamily.InterNetwork, SocketType.Dgram, ProtocolType.Udp);
-            hostData.Bind(new IPEndPoint(IPAddress.Parse(hostIP), port));
+            hostData.Bind(new IPEndPoint(IPAddress.Parse(hostIP), port-1));
             //hostMsg = new Socket(AddressFamily.InterNetwork, SocketType.Dgram, ProtocolType.Udp);
             //hostMsg.Bind(new IPEndPoint(IPAddress.Parse(hostIP), hostPort - 1));
         }

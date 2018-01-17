@@ -12,11 +12,11 @@ using System.Threading;
 
 namespace Server
 {
-    public partial class Form1 : Form
+    public partial class Server : Form
     {
         /*服务端*/
         SynchronizationContext m_SyncContext = null;
-        public Form1()
+        public Server()
         {
             InitializeComponent();
 
@@ -76,7 +76,7 @@ namespace Server
                     case Util.FILESTOP:
                         m_SyncContext.Post(appendMsg, DateTime.Now + "\r\n系统消息：文件传输终止"+ "\r\n");
                         m_SyncContext.Post(toggleBtnStopEnable, 0);
-                        fileRev.stopSend();
+                        fileRev.StopSend();
                         break;
                     case Util.FILESENDOK:
                         m_SyncContext.Post(toggleBtnStopEnable, 0);
@@ -99,14 +99,14 @@ namespace Server
             msg.sendMsg(randomPort.ToString(),Util.PORT);
             Thread.Sleep(5);
             /*接收到的消息是文件名*文件长度，这里传参是文件名，文件长度*/
-            fileRev.reciveFile(serverTemp,temp[0],long.Parse(temp[1]));
+            fileRev.ReciveFile(serverTemp,temp[0],long.Parse(temp[1]));
             m_SyncContext.Post(appendMsg, DateTime.Now + "\r\n系统消息：文件传输开始，文件名："+temp[0]+"\r\n");
         }
 
         private void btnStopTrans_Click(object sender, EventArgs e)
         {
             msg.sendMsg("stopSend", Util.FILESTOP);
-            fileRev.stopSend();
+            fileRev.StopSend();
             m_SyncContext.Post(appendMsg, DateTime.Now + "\r\n系统消息：文件传输终止\r\n");
             btnStopTrans.Enabled = false;
         }
